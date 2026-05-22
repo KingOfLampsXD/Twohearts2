@@ -1,48 +1,201 @@
-body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(
-to bottom,
-#ffd6e7,
-#fff
-);
-
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-align-items:center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container{
+/* BODY */
 
-background:white;
+body {
 
-padding:50px;
+  height: 100vh;
 
-border-radius:30px;
+  display: flex;
 
-text-align:center;
+  justify-content: center;
 
-box-shadow:0 0 30px rgba(
-0,0,0,.1
-);
+  align-items: center;
 
+  overflow: hidden;
+
+  font-family: 'Poppins', sans-serif;
+
+  background: linear-gradient(
+    -45deg,
+    #ff0080,
+    #7928ca,
+    #00c6ff,
+    #ff4d6d
+  );
+
+  background-size: 400% 400%;
+
+  animation: gradientBG 12s ease infinite;
 }
 
-button{
+/* GLASS CARD */
 
-border:none;
+.card {
 
-padding:15px 25px;
+  position: relative;
 
-border-radius:999px;
+  z-index: 10;
 
-background:pink;
+  width: 400px;
 
-font-size:18px;
+  padding: 50px;
 
-cursor:pointer;
+  text-align: center;
 
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow:
+    0 0 30px rgba(255,255,255,0.2);
+
+  color: white;
+
+  animation: fadeIn 2s ease;
+}
+
+/* TITLE */
+
+h1 {
+
+  font-size: 55px;
+
+  margin-bottom: 15px;
+
+  text-shadow:
+    0 0 10px white,
+    0 0 20px pink,
+    0 0 40px hotpink;
+}
+
+/* TEXT */
+
+p {
+
+  font-size: 20px;
+
+  margin-bottom: 35px;
+
+  opacity: 0.9;
+}
+
+/* BUTTON */
+
+button {
+
+  background: white;
+
+  color: #ff0080;
+
+  border: none;
+
+  padding: 15px 35px;
+
+  border-radius: 50px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+
+  transform: scale(1.1);
+
+  box-shadow:
+    0 0 20px white,
+    0 0 40px pink;
+}
+
+/* HEARTS */
+
+.heart {
+
+  position: absolute;
+
+  font-size: 40px;
+
+  animation: float 6s linear infinite;
+
+  opacity: 0.8;
+}
+
+/* Different Positions */
+
+.heart1 {
+  left: 10%;
+  animation-duration: 5s;
+}
+
+.heart2 {
+  left: 30%;
+  animation-duration: 7s;
+}
+
+.heart3 {
+  left: 60%;
+  animation-duration: 6s;
+}
+
+.heart4 {
+  left: 85%;
+  animation-duration: 8s;
+}
+
+/* Floating Animation */
+
+@keyframes float {
+
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+  }
+}
+
+/* Background Animation */
+
+@keyframes gradientBG {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fade */
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
